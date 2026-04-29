@@ -4,6 +4,8 @@ import { Link, NavLink } from "react-router";
 import search from "../assets/icons/search.webp";
 import cart from "../assets/icons/shopping-bag.webp";
 import user from "../assets/icons/user-circle.webp";
+import { motion } from "motion/react";
+import { fadeIn, textVariant } from "./../utils/animations";
 const Navber = () => {
   const navLinks = [
     {
@@ -25,28 +27,41 @@ const Navber = () => {
   ];
 
   return (
-    <nav className="py-4.5 bg-neutral-1">
+    <motion.nav
+      variants={fadeIn("down", 0.1)}
+      animate="show"
+      initial="hidden"
+      className="py-4.5 bg-neutral-1"
+    >
       <Container>
         {/* Desktop Navber */}
         <div className="nav-main flex items-center justify-between">
           {/* Logo */}
           <div className="logo">
-            <h2 className="font-poppins font-semibold text-2xl text-primary">
+            <motion.h2
+              variants={textVariant(0.1)}
+              className="font-poppins font-semibold text-2xl text-primary"
+            >
               3legant.
-            </h2>
+            </motion.h2>
           </div>
           {/* Navlinks */}
           <div className="flex items-center gap-x-10">
             {navLinks.map((nav, index) => (
-              <NavLink
-                to={nav.href}
-                style={({ isActive }) => ({
-                  color: isActive ? "#141718" : "#6C7275",
-                })}
-                className={"font-space-grotesk font-medium text-sm hover:text-neutral-7! transition-colors duration-200"}
-              >
-                {nav.navlink}
-              </NavLink>
+              <motion.span  key={index} variants={textVariant(0.2)}>
+                <NavLink
+                  to={nav.href}
+                 
+                  style={({ isActive }) => ({
+                    color: isActive ? "#141718" : "#6C7275",
+                  })}
+                  className={
+                    "font-space-grotesk font-medium text-sm hover:text-neutral-7! transition-colors duration-200"
+                  }
+                >
+                  {nav.navlink}
+                </NavLink>
+              </motion.span>
             ))}
           </div>
           {/* Cart and Others */}
@@ -91,7 +106,7 @@ const Navber = () => {
           </div>
         </div>
       </Container>
-    </nav>
+    </motion.nav>
   );
 };
 

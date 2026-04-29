@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @font-face {
   font-family: 'Poppins';
   src: url('./assets/fonts/Poppins-Light.ttf') format('truetype');
@@ -19,6 +20,27 @@ html {
   user-select: none;
 }
 
+  .custom-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .custom-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.9);
+    opacity: 1;
+    border-radius: 999px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .custom-pagination .swiper-pagination-bullet-active {
+    width: 24px;
+    height: 8px;
+    background: #ffff;
+    border-radius: 999px;
+  }
 
 @theme {
     --color-primary: #000000;
@@ -28,7 +50,7 @@ html {
     --color-red: #FF5630;
 
     /* Neutral */
-    --color-neutral-1: #ffff;
+    --color-neutral-1: #fff;
     --color-neutral-2: #F3F5F7;
     --color-neutral-3: #E8ECEF;
     --color-neutral-4: #6C7275;
