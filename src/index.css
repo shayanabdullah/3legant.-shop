@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+html {
+  user-select: none;
+}
+
+
+@theme {
+    --color-primary: #000000;
+    --color-blue: #377DFF;
+    --color-green: #38CB89;
+    --color-orange: #FFAB00;
+    --color-red: #FF5630;
+
+    /* Neutral */
+    --color-neutral-1: #ffff;
+    --color-neutral-2: #F3F5F7;
+    --color-neutral-3: #E8ECEF;
+    --color-neutral-4: #6C7275;
+    --color-neutral-5: #343839;
+    --color-neutral-6: #232627;
+    --color-neutral-7: #141718;
+
+    /* font family */
+    --font-poppins: "Poppins", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
