@@ -19,6 +19,9 @@
 html {
   user-select: none;
 }
+.swiper {
+  z-index: 0 !important;
+}
 
   .custom-pagination {
     display: flex;
