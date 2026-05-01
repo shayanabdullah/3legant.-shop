@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "./layouts/Container.jsx";
 import heroOne from "../assets/images/hero-first.webp";
 import heroTwo from "../assets/images/hero-two.webp";
@@ -7,14 +7,19 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import { motion } from "motion/react";
+import { textVariant } from "../utils/animations.js";
+
 
 const Hero = () => {
+  const [loaded, setLoaded] = useState(false);
   return (
     <section>
       <Container>
         <div className="relative w-full px-6 md:px-0">
           <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Navigation, Pagination, Autoplay, ]}
+            
             navigation={{
               prevEl: ".custom-prev",
               nextEl: ".custom-next",
@@ -22,27 +27,40 @@ const Hero = () => {
             pagination={{ clickable: true, el: ".custom-pagination" }}
             loop={true}
             autoplay={{ delay: 3000 }}
+            la
             className="size-full"
           >
             <SwiperSlide>
               <img
                 src={heroOne}
-                className="w-full min-h-76 md:min-h-full "
+                className="w-full h-100 md:h-134 object-cover"
                 alt="slide 1"
+                fetchPriority="high"
+                loading="eager"
+                width="1227"
+                height="536"
+                onLoad={() => setLoaded(true)}
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={heroTwo}
-                className="w-full min-h-76 md:min-h-full object-cover"
+                className="w-full h-100 md:h-134 object-cover swiper-lazy"
                 alt="slide 2"
+                loading="lazy"
+                width="1227"
+                height="536"
+                
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={heroThree}
-                className="w-full min-h-76 md:min-h-full  object-cover"
+                className="w-full h-100 md:h-134 object-cover"
                 alt="slide 3"
+                loading="lazy"
+                width="1227"
+                height="536"
               />
             </SwiperSlide>
           </Swiper>
@@ -65,10 +83,27 @@ const Hero = () => {
         <div className="py-10 px-4 md:px-0">
           <div className="main grid grid-cols-1 md:grid-cols-2 gap-y-4 items-center">
             <div className="right">
-              <h1 className="font-poppins font-semibold text-[40px] md:text-[72px] leading-[150%]">Simply Unique<span className="text-neutral-4">/</span> Simply Better.</h1>
+              <motion.h1
+                variants={textVariant(0.1)}
+                animate={loaded ? "show" : "hidden"}
+                viewport={{ once: true }}
+                className="font-poppins font-semibold text-[40px] md:text-[72px] leading-[150%]"
+              >
+                Simply Unique<span className="text-neutral-4">/</span> Simply
+                Better.
+              </motion.h1>
             </div>
             <div className="left">
-              <p className="font-inter font-normal text-base text-neutral-4"><span className="font-semibold text-neutral-5">3legant</span> is a gift & decorations store based in HCMC, Vietnam. Est since 2019. </p>
+              <motion.p
+                variants={textVariant(0.2)}
+                animate={loaded ? "show" : "hidden"}
+                viewport={{ once: true }}
+                className="font-inter font-normal text-base text-neutral-4"
+              >
+                <span className="font-semibold text-neutral-5">3legant</span> is
+                a gift & decorations store based in HCMC, Vietnam. Est since
+                2019.{" "}
+              </motion.p>
             </div>
           </div>
         </div>

@@ -5,13 +5,15 @@ import search from "../assets/icons/search.webp";
 import cart from "../assets/icons/shopping-bag.webp";
 import user from "../assets/icons/user-circle.webp";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "./../utils/animations.js";
+import { fadeIn, slideInLeft, textVariant } from "./../utils/animations.js";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { LuFacebook, LuSearch } from "react-icons/lu";
 import { BsHeart } from "react-icons/bs";
 import { PiInstagramLogoLight, PiYoutubeLogoLight } from "react-icons/pi";
 import useClickOutside from "../hooks/useClickOutside.jsx";
+
+
 const Navber = () => {
   const navLinks = [
     {
@@ -43,6 +45,7 @@ const Navber = () => {
       variants={fadeIn("down", 0.1)}
       animate="show"
       initial="hidden"
+      viewport={{once: true}}
       className="py-4.5 bg-neutral-1 "
     >
       <Container>
@@ -51,7 +54,8 @@ const Navber = () => {
           {/* Logo */}
           <div className="logo">
             <motion.h2
-              variants={textVariant(0.1)}
+              variants={textVariant(0.2)}
+               viewport={{once: true}}
               className="font-poppins font-semibold text-2xl text-primary"
             >
               3legant.
@@ -60,7 +64,7 @@ const Navber = () => {
           {/* Navlinks */}
           <div className="flex items-center gap-x-10">
             {navLinks.map((nav, index) => (
-              <motion.span  key={index} variants={textVariant(0.2)}>
+              <motion.span  key={index} variants={textVariant(0.2)}  viewport={{once: true}}>
                 <NavLink
                   to={nav.href}
                  
@@ -81,12 +85,7 @@ const Navber = () => {
             <div className="flex items-center gap-x-4">
               <div className="search flex items-center ">
                 <button className="cursor-pointer">
-                  <img
-                    src={search}
-                    alt="icon"
-                    fetchPriority="high"
-                    loading="lazy"
-                  />
+             <LuSearch className="text-2xl"/>
                 </button>
               </div>
               {/* user */}
@@ -96,7 +95,7 @@ const Navber = () => {
                     src={user}
                     alt="icon"
                     fetchPriority="high"
-                    loading="lazy"
+                    loading="eager"
                   />
                 </button>
               </div>
@@ -108,7 +107,7 @@ const Navber = () => {
                   src={cart}
                   alt="icon"
                   fetchPriority="high"
-                  loading="lazy"
+                  loading="eager"
                 />
               </button>
               <span className="px-2 py-1 rounded-full bg-primary text-neutral-1 font-inter font-semibold text-xs">
@@ -117,6 +116,8 @@ const Navber = () => {
             </div>
           </div>
         </div>
+
+
         {/* Mobile navber */}
         <div className="main px-6 lg:hidden" >
       <div className="flex items-center justify-between">
@@ -124,6 +125,7 @@ const Navber = () => {
             <button className="text-2xl" onClick={handleClickMenu}><MdMenu /></button>
                     <motion.h2
               variants={textVariant(0.1)}
+               viewport={{once: true}}
               className="font-poppins font-semibold text-xl text-primary"
             >
               3legant.
@@ -140,10 +142,10 @@ const Navber = () => {
  
            {/* overlay */}
           {isMenuOpen && (
-            <div className="fixed top-0 inset-0 bg-neutral-6/70 z-999999!"></div>
+            <div className="fixed top-0 inset-0 bg-neutral-6/70 z-20!"></div>
           )}
         </div>
-             <div ref={menuRef} className={`absolute top-0 z-1999999! p-6 max-w-87.5 w-full h-screen border-r border-neutral-3 bg-white transition-all duration-300 ${isMenuOpen ? 'left-0' : '-left-full'}`}>
+             <div ref={menuRef} className={`absolute top-0 z-30! p-6 max-w-87.5 w-full h-screen border-r border-neutral-3 bg-white transition-all duration-300 ${isMenuOpen ? 'left-0' : '-left-full '}`}>
  <div className="flex flex-col justify-between h-full">
 
        <div className="top">
@@ -151,6 +153,7 @@ const Navber = () => {
                  
                     <motion.h2
               variants={textVariant(0.1)}
+               viewport={{once: true}}
               className="font-poppins font-semibold text-xl text-primary"
             >
               3legant.
@@ -172,7 +175,7 @@ const Navber = () => {
                 navLinks.map((nav, index)=> (
                    <motion.div  key={index} variants={textVariant(0.2)} className={
                     "font-inter font-medium text-sm hover:text-neutral-7! transition-colors duration-200 py-2.5 border-b border-neutral-3 w-full"
-                  }>
+                  }  viewport={{once: true}}>
                 <NavLink
                   to={nav.href}
                  
@@ -194,7 +197,7 @@ const Navber = () => {
               <div className="cart w-full flex items-center justify-between pb-3 border-b border-neutral-3 text-body-md font-inter font-semibold capitalize text-neutral-4">
                 cart
                    <div className="flex items-center gap-x-1 cursor-pointer">
-            <img src={cart} alt="icon" loading="lazy" fetchPriority="high" />
+            <img src={cart} alt="icon" loading="eager" fetchPriority="high" />
             <span className="px-1  rounded-full bg-neutral-7 text-neutral-1 font-inter font-medium text-sm">2</span>
           </div>
               </div>

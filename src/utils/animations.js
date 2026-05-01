@@ -167,3 +167,22 @@ export const slideFade = {
     },
   },
 };
+
+
+export const slideInLeft = (delay = 0) => ({
+  hidden: {
+    x: -80,
+    opacity: 0,
+    scale: 0.98,
+  },
+  show: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay,
+      duration: 0.6,
+      ease: [0.25, 0.8, 0.25, 1], // smoother than easeOut
+    },
+  },
+});

@@ -18,6 +18,7 @@ const TopBar = () => {
           variants={fadeIn("down", 0.1)}
           animate="show"
           initial="hidden"  
+           viewport={{once: true}}
           className="py-2.5 bg-neutral-2 flex justify-end items-center px-6"
 
         >
@@ -27,10 +28,8 @@ const TopBar = () => {
                 src={ticket}
                 alt="icon"
                 fetchPriority="high"
-                loading="lazy"
               />
-              <motion.h2
-                variants={textVariant(0.1)}
+              <motion.h2  
                 className="font-inter font-semibold text-xs md:text-md text-neutral-5"
               >
                 30% off storewide — Limited time!
