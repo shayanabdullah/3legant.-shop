@@ -11,7 +11,7 @@ import { RxCross2 } from "react-icons/rx";
 import { LuFacebook, LuSearch } from "react-icons/lu";
 import { BsHeart } from "react-icons/bs";
 import { PiInstagramLogoLight, PiYoutubeLogoLight } from "react-icons/pi";
-import useClickOutside from "../../../Eco-bazar/src/hooks/useClickOutside.jsx";
+import useClickOutside from "../hooks/useClickOutside.jsx";
 const Navber = () => {
   const navLinks = [
     {
