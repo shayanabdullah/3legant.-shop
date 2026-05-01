@@ -5,7 +5,7 @@ import search from "../assets/icons/search.webp";
 import cart from "../assets/icons/shopping-bag.webp";
 import user from "../assets/icons/user-circle.webp";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "./../utils/animations.jx";
+import { fadeIn, textVariant } from "./../utils/animations.js";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { LuFacebook, LuSearch } from "react-icons/lu";
