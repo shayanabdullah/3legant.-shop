@@ -1,17 +1,17 @@
 import React, { useRef, useState } from "react";
-import Container from "./layouts/Container";
+import Container from "./layouts/Container.jsx";
 import { Link, NavLink } from "react-router";
 import search from "../assets/icons/search.webp";
 import cart from "../assets/icons/shopping-bag.webp";
 import user from "../assets/icons/user-circle.webp";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "./../utils/animations";
+import { fadeIn, textVariant } from "./../utils/animations.jx";
 import { MdMenu } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { LuFacebook, LuSearch } from "react-icons/lu";
 import { BsHeart } from "react-icons/bs";
 import { PiInstagramLogoLight, PiYoutubeLogoLight } from "react-icons/pi";
-import useClickOutside from "../../../Eco-bazar/src/hooks/useClickOutside";
+import useClickOutside from "../../../Eco-bazar/src/hooks/useClickOutside.jsx";
 const Navber = () => {
   const navLinks = [
     {

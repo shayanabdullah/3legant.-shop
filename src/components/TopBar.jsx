@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Container from "./layouts/Container";
+import Container from "./layouts/Container.jsx";
 import ticket from "../assets/icons/ticket-percent.webp";
 import { Link } from "react-router";
 import { IoArrowForward, IoClose } from "react-icons/io5";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "../utils/animations";
+import { fadeIn, textVariant } from "../utils/animations.js";
 
 const TopBar = () => {
   const [topbar, setTopbar] = useState(true);

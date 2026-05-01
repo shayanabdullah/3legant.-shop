@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "./layouts/Container";
+import Container from "./layouts/Container.jsx";
 import heroOne from "../assets/images/hero-first.webp";
 import heroTwo from "../assets/images/hero-two.webp";
 import heroThree from "../assets/images/hero-three.webp";
