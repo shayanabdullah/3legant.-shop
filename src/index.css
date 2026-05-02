@@ -45,6 +45,29 @@ html {
     border-radius: 999px;
   }
 
+.main .swiper-button-next, .swiper-button-prev {
+  display: none !important;
+}
+
+/* progress bar container */
+
+.main .swiper-pagination-progressbar {
+    top: 105% !important;
+}
+.mySwiper .swiper-slide {
+  max-width: 270px;
+}
+
+.swiper {
+ position: static !important;
+}   
+.swiper-pagination-progressbar-fill {
+  background: #141718 !important; /* dark fill */
+  border-radius: 999px !important;
+  transition: transform 0.3s ease !important;
+  border-radius: 50%;
+}
+
 @theme {
     --color-primary: #000000;
     --color-blue: #377DFF;
@@ -65,4 +88,5 @@ html {
     --font-poppins: "Poppins", sans-serif;
   --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-inter: "Inter", sans-serif;
+  
 }
