@@ -6,7 +6,7 @@ const ProductCard = ({img, title, tag, tagColor, discount, previousPrice, price,
   return (
     <div>
         <div className="img relative overflow-hidden group cursor-pointer mb-3.5">
-            <img src={img} alt="" />
+            <img src={img} alt="product" fetchPriority='high' loading='lazy' width={'100%'} />
                 <div className="flex flex-col gap-y-2 absolute top-4 left-4 z-10">
                     {tag && <h3 className={`py-1 px-3.5  font-inter font-bold text-neutral-1 ${tagColor || 'bg-neutral-1 text-neutral-7'}`}>{tag}</h3>}
                  {discount && <h3 className='py-1 px-3.5 bg-green font-inter font-bold text-neutral-1 w-fit'>{discount}</h3>}
