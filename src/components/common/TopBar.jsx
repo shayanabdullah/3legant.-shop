@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Container from "./layouts/Container.jsx";
-import ticket from "../assets/icons/ticket-percent.webp";
+import Container from "../layouts/Container.jsx";
+import ticket from "../../assets/icons/ticket-percent.webp";
 import { Link } from "react-router";
 import { IoArrowForward, IoClose } from "react-icons/io5";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "../utils/animations.js";
+import { fadeIn, textVariant } from "../../utils/animations.js";
 
 const TopBar = () => {
   const [topbar, setTopbar] = useState(true);
@@ -17,21 +17,14 @@ const TopBar = () => {
         <motion.header
           variants={fadeIn("down", 0.1)}
           animate="show"
-          initial="hidden"  
-           viewport={{once: true}}
+          initial="hidden"
+          viewport={{ once: true }}
           className="py-2.5 bg-neutral-2 flex justify-end items-center px-6"
-
         >
           <Container>
             <div className="main  flex items-center justify-center gap-x-3 w-full">
-              <img
-                src={ticket}
-                alt="icon"
-                fetchPriority="high"
-              />
-              <motion.h2  
-                className="font-inter font-semibold text-xs md:text-md text-neutral-5"
-              >
+              <img src={ticket} alt="icon" fetchPriority="high" />
+              <motion.h2 className="font-inter font-semibold text-xs md:text-md text-neutral-5">
                 30% off storewide — Limited time!
               </motion.h2>
               <Link className=" hidden md:flex items-center gap-x-1 text-blue font-inter font-medium text-xs md:text-md h-full border-b border-blue">

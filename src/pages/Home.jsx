@@ -1,20 +1,21 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import HeroGrid from '../components/HeroGrid'
-import NewArrivals from '../components/NewArrivals'
-import StoreFeatures from '../components/StoreFeatures'
-import PromoBanner from '../components/PromoBanner'
+import React from "react";
+import Hero from "../components/home/Hero";
+import HeroGrid from "../components/home/HeroGrid";
+import NewArrivals from "../components/home/NewArrivals";
+import StoreFeatures from "../components/home/StoreFeatures";
+import PromoBanner from "../components/home/PromoBanner";
+
 
 const Home = () => {
   return (
     <>
-    <Hero/>
-    <HeroGrid/>
-    <NewArrivals/>
-    <StoreFeatures/>
-    <PromoBanner/>
+      <Hero />
+      <HeroGrid />
+      <NewArrivals />
+      <StoreFeatures />
+      <PromoBanner />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

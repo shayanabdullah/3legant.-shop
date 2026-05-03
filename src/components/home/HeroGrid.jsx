@@ -1,17 +1,23 @@
 import React from "react";
-import Container from "./layouts/Container";
-import sofa from "../assets/images/hero-sofa.webp";
-import drawer from "../assets/images/hero-drawer.webp";
-import toaster from "../assets/images/hero-toaster.webp";
+import Container from "../layouts/Container";
+import sofa from "../../assets/images/hero-sofa.webp";
+import drawer from "../../assets/images/hero-drawer.webp";
+import toaster from "../../assets/images/hero-toaster.webp";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { motion } from "motion/react";
-import { fadeIn, textVariant } from "../utils/animations";
-import Button from "./ui/Button";
+import { fadeIn, textVariant } from "../../utils/animations";
+import Button from "../ui/Button";
 const HeroGrid = () => {
   return (
     <section className="px-5 md:px-0">
       <Container>
-        <motion.div variants={fadeIn('up', 0.2)} initial='hidden' whileInView={'show'} viewport={{once:true}} className="main grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: true }}
+          className="main grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4"
+        >
           <div className="left size-full relative group">
             <div className="text absolute top-8 md:top-12 left-8 md:left-12 ">
               <motion.h2

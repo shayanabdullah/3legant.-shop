@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Container from "./layouts/Container.jsx";
-import heroOne from "../assets/images/hero-first.webp";
-import heroTwo from "../assets/images/hero-two.webp";
-import heroThree from "../assets/images/hero-three.webp";
+import Container from "../layouts/Container.jsx";
+import heroOne from "../../assets/images/hero-first.webp";
+import heroTwo from "../../assets/images/hero-two.webp";
+import heroThree from "../../assets/images/hero-three.webp";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { motion } from "motion/react";
-import { textVariant } from "../utils/animations.js";
-
+import { textVariant } from "../../utils/animations.js";
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -18,8 +17,7 @@ const Hero = () => {
       <Container>
         <div className="relative w-full px-6 md:px-0">
           <Swiper
-            modules={[Navigation, Pagination, Autoplay, ]}
-            
+            modules={[Navigation, Pagination, Autoplay]}
             navigation={{
               prevEl: ".custom-prev",
               nextEl: ".custom-next",
@@ -50,7 +48,6 @@ const Hero = () => {
                 loading="lazy"
                 width="1227"
                 height="536"
-                
               />
             </SwiperSlide>
             <SwiperSlide>
