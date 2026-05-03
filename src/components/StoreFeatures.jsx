@@ -44,11 +44,13 @@ const valueProps = [
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-6 md:gap-x-6 ">
               {
                 valueProps.map((item)=> (
-                    <motion.div variants={fadeIn('up', item.delay)} initial='hidden' animate="show" viewport={{once:true}} className="py-8 md:py-12 px-4 md:px-8  bg-neutral-2" key={item.id}>
+                    <motion.div variants={fadeIn('up', item.delay)} initial='hidden' whileInView="show" viewport={{once:true}} className="py-8 md:py-12 px-4 md:px-8  bg-neutral-2" key={item.id}>
                     <item.icon className='text-4xl mb-4'/>
                     <div className="">
-                        <motion.h2 variants={textVariant(item.delay)}  viewport={{once:true}} className='font-poppins  text-sm md:text-xl font-semibold text-neutral-7 pb-2'>{item.title}</motion.h2>
-                        <motion.p variants={textVariant(item.delay + 0.1)}  viewport={{once:true}} className='font-inter text-sm font-normal text-neutral-4'>{item.description}</motion.p>
+                        <motion.h2 variants={textVariant(item.delay)} 
+                        
+                        className='font-poppins  text-sm md:text-xl font-semibold text-neutral-7 pb-2'>{item.title}</motion.h2>
+                        <motion.p variants={textVariant(item.delay + 0.1)}  className='font-inter text-sm font-normal text-neutral-4'>{item.description}</motion.p>
                     </div>
                 </motion.div>
                 ))

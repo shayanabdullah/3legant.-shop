@@ -1,6 +1,8 @@
 import React from 'react'
 import { MdOutlineStar } from 'react-icons/md'
 import { TiHeartOutline } from 'react-icons/ti'
+import { motion } from 'motion/react';
+import { textVariant } from '../utils/animations';
 
 const ProductCard = ({img, title, tag, tagColor, discount, previousPrice, price, rating}) => {
   return (
@@ -22,7 +24,7 @@ const ProductCard = ({img, title, tag, tagColor, discount, previousPrice, price,
                </div>
         </div>
         <div className="text">
-            <div className="star pb-2.5">
+            <motion.div variants={textVariant(0.1)} initial='hidden' whileInView={'show'} viewport={{once:true}} className="star pb-2.5">
                {
                 rating >= 4 ? (
                   <div className="flex items-center gap-x-1 text-xl">
@@ -42,12 +44,12 @@ const ProductCard = ({img, title, tag, tagColor, discount, previousPrice, price,
                   </div>
                 )   
                }
-            </div>
+            </motion.div >
             <div className="title">
-                <h2 className='font-inter font-semibold text-base'>{title || 'product '}</h2>
+                <motion.h2 variants={textVariant(0.2)} initial='hidden' animate={'show'}  className='font-inter font-semibold text-base'>{title || 'product '}</motion.h2>
             </div>
             <div className="price flex items-center gap-x-2">
-                <p className='font-inter font-semibold text-sm text-neutral-7'>${price}</p>
+                <motion.p variants={textVariant(0.3)} initial='hidden' animate={'show'}  className='font-inter font-semibold text-sm text-neutral-7'>${price}</motion.p>
                 {previousPrice &&  <p className='font-inter font-normal text-sm text-neutral-4 line-through'>{previousPrice}.00</p> }
             </div>
         </div>

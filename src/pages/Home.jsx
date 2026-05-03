@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import HeroGrid from '../components/HeroGrid'
 import NewArrivals from '../components/NewArrivals'
 import StoreFeatures from '../components/StoreFeatures'
+import PromoBanner from '../components/PromoBanner'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
     <HeroGrid/>
     <NewArrivals/>
     <StoreFeatures/>
+    <PromoBanner/>
     </>
   )
 }

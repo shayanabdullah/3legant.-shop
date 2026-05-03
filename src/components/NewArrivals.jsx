@@ -10,6 +10,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { products } from "../data/product";
+import Button from "./ui/Button";
+import { motion } from 'motion/react';
+import { textVariant } from "../utils/animations";
 
 const NewArrivals = () => {
 
@@ -17,13 +20,10 @@ const NewArrivals = () => {
     <section className="py-8 md:py-12 px-4 md:px-0 ">
       <Container>
         <div className="header w-full flex justify-between items-center pb-12">
-          <h2 className="font-poppins font-semibold text-[32px] md:text-[40px] leading-11">
+          <motion.h2 variants={textVariant(0.2)} initial='hidden' whileInView={'show'} viewport={{once:true}} className="font-poppins font-semibold text-[32px] md:text-[40px] leading-11">
             New <br /> Arrivals
-          </h2>
-          <Link className="flex items-center gap-x-1 font-inter font-medium text-base py-1 border-b group">
-            More Products
-            <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
-          </Link>
+          </motion.h2>
+          <Button text={'More Products '} icon={<IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />} />
         </div>
         <div className="main pb-6 relative! w-full!">
           {/* Product Card */}

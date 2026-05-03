@@ -5,12 +5,13 @@ import drawer from "../assets/images/hero-drawer.webp";
 import toaster from "../assets/images/hero-toaster.webp";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { motion } from "motion/react";
-import { textVariant } from "../utils/animations";
+import { fadeIn, textVariant } from "../utils/animations";
+import Button from "./ui/Button";
 const HeroGrid = () => {
   return (
     <section className="px-5 md:px-0">
       <Container>
-        <div className="main grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+        <motion.div variants={fadeIn('up', 0.2)} initial='hidden' whileInView={'show'} viewport={{once:true}} className="main grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
           <div className="left size-full relative group">
             <div className="text absolute top-8 md:top-12 left-8 md:left-12 ">
               <motion.h2
@@ -22,9 +23,13 @@ const HeroGrid = () => {
               >
                 Living Room
               </motion.h2>
-              <motion.p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 border-b w-4/5 transition-all duration-300 group-hover:w-full">
-                Shop Now{" "}
-                <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
+              <motion.p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 ">
+                <Button
+                  text={"Shop Now"}
+                  icon={
+                    <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
+                  }
+                />
               </motion.p>
             </div>
             <img
@@ -47,10 +52,14 @@ const HeroGrid = () => {
                 >
                   Bedroom
                 </motion.h2>
-                <p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 border-b w-4/5 transition-all duration-300 group-hover:w-full">
-                  Shop Now{" "}
-                  <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
-                </p>
+                <motion.p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 ">
+                  <Button
+                    text={"Shop Now"}
+                    icon={
+                      <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
+                    }
+                  />
+                </motion.p>
               </div>
               <img
                 src={drawer}
@@ -71,10 +80,14 @@ const HeroGrid = () => {
                 >
                   Kitchen
                 </motion.h2>
-                <p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 border-b md:w-4/5 transition-all duration-300 group-hover:w-full">
-                  Shop Now{" "}
-                  <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
-                </p>
+                <motion.p className="flex items-center gap-x-1 font-inter font-medium text-base py-1 ">
+                  <Button
+                    text={"Shop Now"}
+                    icon={
+                      <IoArrowForwardOutline className="transition-all duration-300 group-hover:ml-3" />
+                    }
+                  />
+                </motion.p>
               </div>
               <img
                 src={toaster}
@@ -85,7 +98,7 @@ const HeroGrid = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
