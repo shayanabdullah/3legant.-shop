@@ -4,6 +4,7 @@ import HeroGrid from "../components/home/HeroGrid";
 import NewArrivals from "../components/home/NewArrivals";
 import StoreFeatures from "../components/home/StoreFeatures";
 import PromoBanner from "../components/home/PromoBanner";
+import Article from "../components/home/Article";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <NewArrivals />
       <StoreFeatures />
       <PromoBanner />
+      <Article/>
     </>
   );
 };
