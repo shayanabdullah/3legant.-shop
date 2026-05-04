@@ -5,6 +5,7 @@ import NewArrivals from "../components/home/NewArrivals";
 import StoreFeatures from "../components/home/StoreFeatures";
 import PromoBanner from "../components/home/PromoBanner";
 import Article from "../components/home/Article";
+import NewsLetter from "../components/common/NewsLetter";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <StoreFeatures />
       <PromoBanner />
       <Article/>
+
     </>
   );
 };

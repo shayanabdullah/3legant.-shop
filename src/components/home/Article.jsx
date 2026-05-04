@@ -10,7 +10,7 @@ import Button from "../ui/Button";
 
 const Article = () => {
   return (
-    <section className="py-10 md:py-20">
+    <section className="py-10 md:py-20 px-8 md:px-0">
       <Container>
         <div className="header w-full flex justify-between items-center pb-10">
           <motion.h2
@@ -32,7 +32,7 @@ const Article = () => {
         {/* Blogs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6">
           <motion.div
-            variants={fadeIn(0.1)}
+            variants={fadeIn('up', 0.1)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true }}

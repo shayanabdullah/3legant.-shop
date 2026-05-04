@@ -13,6 +13,7 @@ const ProductCard = ({
   previousPrice,
   price,
   rating,
+  delay
 }) => {
   return (
     <div>
@@ -51,7 +52,7 @@ const ProductCard = ({
       </div>
       <div className="text">
         <motion.div
-          variants={textVariant(0.1)}
+          variants={textVariant(delay)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true }}
@@ -76,7 +77,7 @@ const ProductCard = ({
         </motion.div>
         <div className="title">
           <motion.h2
-            variants={textVariant(0.2)}
+            variants={textVariant(delay)}
             initial="hidden"
             animate={"show"}
             className="font-inter font-semibold text-base"
@@ -86,7 +87,7 @@ const ProductCard = ({
         </div>
         <div className="price flex items-center gap-x-2">
           <motion.p
-            variants={textVariant(0.3)}
+            variants={textVariant(delay)}
             initial="hidden"
             animate={"show"}
             className="font-inter font-semibold text-sm text-neutral-7"

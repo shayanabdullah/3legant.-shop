@@ -47,7 +47,7 @@ const NewArrivals = () => {
               type: "progressbar",
             }}
           >
-            {products.map((product) => (
+            {products.map((product, index) => (
               <SwiperSlide key={product.id}>
                 <ProductCard
                   img={product.img}
@@ -58,6 +58,7 @@ const NewArrivals = () => {
                   previousPrice={product.oldPrice}
                   tagColor={product.tag.color}
                   price={product.price}
+                  delay={0.1 + index * 0.1}
                 />
               </SwiperSlide>
             ))}
