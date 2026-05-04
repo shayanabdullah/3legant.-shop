@@ -16,13 +16,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className='py-12 md:pt-20 md:pb-8 bg-neutral-7 px-6 md:px-0'>
+    <footer className='py-10 md:pt-20 md:pb-8 bg-neutral-7 px-6 md:px-0'>
       <Container>
         <div className="main flex flex-col gap-y-12 justify-between">
           <div className="grid grid-cols-1 md:grid-cols-2 justify-between">
 
-            <div className="flex flex-col md:flex-row gap-x-8 items-center">
-              <div className="logo pr-8 border-r border-neutral-4 h-fit w-fit">
+            <div className="flex flex-col md:flex-row gap-x-8 gap-y-4 items-center mb-10 md:mb-0">
+              <div className="logo pb-5 md:pr-8 md:pb-0 border-b md:border-r md:border-b-0 border-neutral-4 h-fit w-fit">
                 <motion.h2
                   variants={textVariant(0.1)}
                   initial="hidden"
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
 
             {/* Footer links */}
-            <div className="flex flex-col md:flex-row items-center gap-x-10 justify-end">
+            <div className="flex flex-col md:flex-row items-center gap-x-10 gap-y-10 justify-end">
               {footerlinks.map((nav, index) => (
                 <motion.span
                   key={index}
@@ -83,7 +83,7 @@ const Footer = () => {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className='font-poppins font-bold text-xs text-neutral-3 ml-7'
+                  className='font-poppins font-bold text-xs text-neutral-3 md:ml-7'
                 >
                   Privacy Policy
                 </motion.p>
@@ -103,7 +103,7 @@ const Footer = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex items-center gap-x-6 text-neutral-1 text-2xl mt-5"
+                className="flex items-center gap-x-6 text-neutral-1 text-2xl my-6"
               >
                 <PiInstagramLogoLight />
                 <a href="https://www.facebook.com/profile.php?id=61580061792886">
@@ -119,7 +119,7 @@ const Footer = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className='font-poppins font-medium text-xs text-neutral-3 mt-4'
+              className='font-poppins font-medium text-xs text-neutral-3 mt-4 text-center md:text-left'
             >
               Develop by Shayan Abdullah
             </motion.p>
