@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Container from "../layouts/Container.jsx";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import search from "../../assets/icons/search.webp";
 import cart from "../../assets/icons/shopping-bag.webp";
 import user from "../../assets/icons/user-circle.webp";
@@ -39,6 +39,7 @@ const Navber = () => {
     setIsMenuOpen((prev) => !prev);
   };
   useClickOutside(menuRef, () => setIsMenuOpen(false), isMenuOpen);
+  const currentPath = useLocation().pathname;
   return (
     <motion.nav
       variants={fadeIn("down", 0.1)}
@@ -73,9 +74,9 @@ const Navber = () => {
                   style={({ isActive }) => ({
                     color: isActive ? "#141718" : "#6C7275",
                   })}
-                  className={
-                    "font-space-grotesk font-medium text-sm hover:text-neutral-7! transition-colors duration-200"
-                  }
+                  className=
+                    {`font-space-grotesk font-medium text-sm hover:text-neutral-7! transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${nav.href === currentPath ? "after:w-full" : ""}`}
+                  
                 >
                   {nav.navlink}
                 </NavLink>
